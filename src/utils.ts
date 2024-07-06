@@ -37,7 +37,7 @@ function updateDynamics(state: DynamicState, constants: DynamicConst): DynamicSt
   }
 }
 
-type SmoothMove = Comp & {
+export type SmoothMove = Comp & {
   target: Vec2
   state: {
     x: DynamicState
@@ -53,7 +53,7 @@ type SmoothMove = Comp & {
   smoothByV(vec2: Vec2): void
 }
 
-const smoothMove = (damp: number, speed: number): SmoothMove=>({
+export const smoothMove = (damp: number, speed: number): SmoothMove=>({
   id: "smoothMove",
 
   constants: calculateConst(damp, speed),
