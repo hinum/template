@@ -1,4 +1,4 @@
-import { Comp, EventController, Vec2 } from "kaboom";
+import { Comp,Vec2 } from "kaplay";
 import { k } from "./main";
 
 type allowedKey = string | number | symbol
@@ -7,16 +7,11 @@ export const fromEntries = <K extends allowedKey,T>(arr: [K,T][])=>Object.entrie
 export const keys = <K extends allowedKey>(obj: Record<K, unknown>)=>Object.keys(obj) as K[]
 export const values = <T>(obj: Record<any, T>)=>Object.values(obj) as T[]
 
+export const promisify = <T>(fn: (handler: (e: T)=>void)=>unknown)=>new Promise<T>(fn)
 export function print<T>(inp: T){
   console.log(inp)
   return inp
 }
-export const promisify = <T>(fn: (handler: (e: T)=>void)=>EventController)=>new Promise<T>(res=>{
-  const handle = fn((arg)=>{
-    handle.cancel()
-    res(arg)
-  })
-})
 
 type DynamicState = {
   value: number

@@ -6,11 +6,11 @@
 		"bundle": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
 		"check": "tsc"
 	},
-	"dependencies": {
-		"kaboom": "^3000.1.17"
-	},
 	"devDependencies": {
 		"esbuild": "^0.23.0",
 		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"kaplay": "^3001.0.0-alpha.17"
 	}
 }

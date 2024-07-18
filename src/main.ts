@@ -1,4 +1,4 @@
-import kaboom from "kaboom"
+import kaboom from "kaplay"
 
 const WIDTH = 128
 const ASPECT_RATIO = (16 / 9)
